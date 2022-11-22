@@ -107,10 +107,11 @@ Index.php
 
 User.php
 
-public function register()
-{
-return $this->fetch('register');
-}
+
+    public function register()
+    {
+    return $this->fetch('register');
+    }
 
     public function doregister()
     {
