@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/thinkphp5/public/static/bootstrap.min.css" />
+    <link rel="stylesheet" href="/thinkphp5/public/static/mystyle1.css" />
+</head>
+<body>
+<h2>留言板</h2>
+<div class="info">
+    {empty name="Think.session.user.username"}
+        <a href="{:url('index/user/login')}">登录</a>
+        <a href="{:url('index/user/register')}">注册</a>
+        {else/}
+    <h3><strong>欢迎您！{$Think.session.user.username}</strong></h3>
+        <p style="...">
+        <a href="{:url('index/index/post')}">发表留言</a>
+        <a href="{:url('index/user/logout')}">退出登录</a>
+        </p>
+    {/empty}
+</div>
+
+{volist name="list" id="item" mod="2"}
+    {eq name="mod" value="1"}
+        <div class="message">
+            <div class="content">{$item.content}</div>
+            <div class="subinfo">
+                留言者：{$item.username}
+                留言时间：{$item.created_at|date='Y-m-d H:i:s',###}
+              {eq name="Think.session.user.userId" value="$item.user_id"}  <!--   session判断等于后面打印后句-->
+                <a href="{:url('delete?id='.$item['message_id'])}" onclick="return confirm('确定删除此条留言？')">删除</a>
+            {/eq}
+            </div>
+        </div>
+    {/eq}
+
+    {eq name="mod" value="0"}
+        <div class="message2">
+            <div class="content">{$item.content}</div>
+            <div class="subinfo2">
+                留言者：{$item.username}
+                留言时间:{$item.created_at | date='Y-m-d H:i:s',###}
+                {eq name="Think.session.user.userId" value="$item.user_id"} <!--  # session判断等于后面打印后句-->
+                    <a href="{:url('delete?id='.$item['message_id'])}" onclick="return confirm('确定删除此条留言？')">删除</a>
+                {/eq}
+            </div>
+        </div>
+    {/eq}
+{/volist}
+{$list->render()}
+</body>
+</html>

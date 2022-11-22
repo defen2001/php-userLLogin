@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/thinkphp5/public/static/mystylel.css" />
+</head>
+<body>
+<h2>留言板</h2>
+<form action="{:url('index/index/do_post')}" method="post">
+    <label for="content">留言内容</label><br>
+    <textarea name="content" id="content" rows="4" maxlength="100" required></textarea><br>
+    <button>发表</button>
+    <button type="reset">重置</button>
+</form>
+<p>
+    <a href="{:url('index/index/index')}">首页</a>
+</p>
+</body>
+</html>
