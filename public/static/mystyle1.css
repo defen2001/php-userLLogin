@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    padding: 20px;
+    background-color: #ffffe8;
+    font:16px 方正舒体;
+}
+
+h2{
+    color: blue;
+    margin: 6px 0 0;
+    font-size: 48px;
+    font-family: 华文新魏;
+    text-align: center;
+    border-bottom: 3px double blue;
+}
+
+.info{
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.message{
+    padding: 4px;
+    border:3px double red;
+    background-color:red;
+}
+
+.message2{
+    padding: 4px;
+    border:3px double blue;
+    background-color:white;
+}
+
+.content{
+    padding: 12px;
+}
+
+.subinfo{
+    padding: 5px;
+    border-top: 1px solid white;
+}
+
+.subinfo2{
+    padding: 5px;
+    border-top: 1px solid #eee;
+}
